@@ -30,7 +30,7 @@ class Header extends React.Component {
         <IconButton tooltip="menu" style={styles.icon} iconStyle={styles.svg} onClick={this.handelOpen.bind(this)}>
           <MenuButton  color='#fff' hoverColor='#004D40'/>
         </IconButton>
-        <Search />
+        <Search handelSearch={this.props.change}/>
         <NavBar ref='navbar'/>
       </div>
     )

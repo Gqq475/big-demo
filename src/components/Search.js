@@ -3,7 +3,12 @@ import SearchBtn from 'material-ui/svg-icons/action/search';
 import TextField from 'material-ui/TextField';
 
 class Search extends React.Component {
+  handelInput(e){
+    let x = e.target.value;
+    this.props.handelSearch(x);
+  }
   render () {
+    // console.log(this.props.handelSearch);
     let styles={
       root:{
         padding:'50px 10px'
@@ -30,7 +35,7 @@ class Search extends React.Component {
       },
       text:{
         width:'60%',
-        maxWidth:'600px',
+        maxWidth:'400px',
         fontSize:'20px'
       },
       underlineStyle:{
@@ -54,7 +59,8 @@ class Search extends React.Component {
             underlineFocusStyle={styles.underlineStyle}
             hintStyle={styles.hintStyle}
             inputStyle={styles.inputStyle}
-            style={styles.text} />
+            style={styles.text}
+            onChange={this.handelInput.bind(this)}/>
         </div>
       </div>
     )
