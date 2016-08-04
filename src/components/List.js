@@ -3,7 +3,7 @@ import map from 'lodash/fp/map';
 
 import BlogCard from './Card.js';
 import blogs from '../blogs/blogs.js';
-import AccountUser from './AccountUser';
+import GithubAccount from './GithubAccount/GithubAccount';
 
 
 class List extends React.Component {
@@ -32,7 +32,7 @@ class List extends React.Component {
       <div style={styles.root}>
 
         {blogCards}
-        <AccountUser />
+        <GithubAccount />
       </div>
     )
   }

@@ -53,6 +53,7 @@ class AccountUser extends Component {
     }
     return (
       <div >
+        <Card>
         <div  style={styles.root}>
           <h2 style={styles.h2}>My GitHub Info</h2>
         <img style={styles.img}src={this.state.resString.avatar_url} />
@@ -69,6 +70,7 @@ class AccountUser extends Component {
            {this.state.resString.following}
           </div>
           </div>
+        </Card>
       </div>
     );
   }
