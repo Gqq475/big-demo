@@ -4,7 +4,6 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import Header from './components/Header';
 import List from './components/List';
 import Footer from './components/Footer';
-
 class App extends React.Component {
   constructor(){
     super();
@@ -22,6 +21,7 @@ class App extends React.Component {
   render () {
     return(
       <div>
+      
         <Header change={this.cardSearch.bind(this)}/>
         <List search={this.state.search}/>
         <Footer />

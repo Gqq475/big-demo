@@ -3,6 +3,8 @@ import map from 'lodash/fp/map';
 
 import BlogCard from './Card.js';
 import blogs from '../blogs/blogs.js';
+import AccountUser from './AccountUser';
+
 
 class List extends React.Component {
   render () {
@@ -28,7 +30,9 @@ class List extends React.Component {
     }
     return(
       <div style={styles.root}>
+      
         {blogCards}
+        <AccountUser />
       </div>
     )
   }

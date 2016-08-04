@@ -20,7 +20,7 @@ class Footer extends React.Component {
     return(
       <div style={styles.root}>
         <p>更多信息，请添加我的微信</p>
-        <p>微信号：<b>newming1993</b></p>
+        <p>微信号：<b>qad11110000</b></p>
         <img src={Me}  style={styles.img}/>
       </div>
     )

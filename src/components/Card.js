@@ -6,7 +6,7 @@ class Card extends React.Component {
       root:{
         width:'100%',
         height:'90px',
-        marginBottom:'15px'
+        marginBottom:'15px',
       },
       left:{
         float:'left',

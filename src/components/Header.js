@@ -4,7 +4,6 @@ import MenuButton from 'material-ui/svg-icons/navigation/menu';
 
 import Search from './Search';
 import NavBar from './NavBar';
-
 class Header extends React.Component {
   handelOpen(){
     this.refs.navbar.handleToggle();
@@ -12,6 +11,7 @@ class Header extends React.Component {
   render () {
     let styles={
       root:{
+        height:"auto",
         backgroundColor:'#00BCD4',
       },
       icon:{
@@ -27,11 +27,13 @@ class Header extends React.Component {
     }
     return(
       <div style={styles.root}>
+
         <IconButton tooltip="menu" style={styles.icon} iconStyle={styles.svg} onClick={this.handelOpen.bind(this)}>
           <MenuButton  color='#fff' hoverColor='#004D40'/>
         </IconButton>
         <Search handelSearch={this.props.change}/>
         <NavBar ref='navbar'/>
+
       </div>
     )
   }
