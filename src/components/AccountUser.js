@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import Card from 'material-ui/Card';
-class Home extends Component {
+class AccountUser extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -47,7 +47,7 @@ class Home extends Component {
       h2:{
         paddingTop:"10px",
         width:"32%",
-        marginLeft:"36%"
+        marginLeft:"35%"
       }
 
     }
@@ -74,4 +74,4 @@ class Home extends Component {
   }
 }
 
-export default Home;
+export default AccountUser;
