@@ -30,7 +30,7 @@ class List extends React.Component {
     }
     return(
       <div style={styles.root}>
-      
+
         {blogCards}
         <AccountUser />
       </div>

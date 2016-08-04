@@ -21,7 +21,7 @@ class App extends React.Component {
   render () {
     return(
       <div>
-      
+
         <Header change={this.cardSearch.bind(this)}/>
         <List search={this.state.search}/>
         <Footer />
