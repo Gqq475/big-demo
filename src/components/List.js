@@ -8,12 +8,16 @@ class Blog extends Component {
   constructor(){
     super();
     this.state={
+      text:'',
       posts: ''
     }
   }
-
+  cardSearch(){
+    this.setState({text:x})}
+  }
   componentDidMount(){
-    let address = `https://raw.githubusercontent.com/Gqq475/big-demo/master/posts/index.json`
+     // use math random to avoid browser cache
+    let address = `https://raw.githubusercontent.com/Gqq475/big-demo/master/posts/index.json?v=${Math.random()}`
     axios.get(address).then((res) => {
       console.log(res);
       this.setState({
@@ -35,7 +39,7 @@ class Blog extends Component {
     // console.log(AllCards);
     return(
       <div>
-        <Search />
+        <Search  change={this.state.cardSearch}/>
         <div style={{marginTop:"30px"}}>
         {blogCards}
       </div>
