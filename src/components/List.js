@@ -13,7 +13,7 @@ class Blog extends Component {
   }
 
   componentDidMount(){
-    let address = `https://raw.githubusercontent.com/happypeter/big-demo/master/posts/index.json`
+    let address = `https://raw.githubusercontent.com/Gqq475/big-demo/master/posts/index.json`
     axios.get(address).then((res) => {
       console.log(res);
       this.setState({
