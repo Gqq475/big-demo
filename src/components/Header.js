@@ -28,7 +28,7 @@ class Header extends React.Component {
       <div style={styles.root}>
         <AppBar  title="Title" onLeftIconButtonTouchTap={this._onLeftIconButtonTouchTap.bind(this)} />
 
-    
+
         <NavBar ref='navbar'/>
 
       </div>
