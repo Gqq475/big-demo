@@ -1,13 +1,12 @@
 import React from 'react';
-import IconButton from 'material-ui/IconButton';
-import MenuButton from 'material-ui/svg-icons/navigation/menu';
+import AppBar from 'material-ui/AppBar';
 
-import Search from './Search';
 import NavBar from './NavBar';
 class Header extends React.Component {
-  handelOpen(){
+  _onLeftIconButtonTouchTap(){
     this.refs.navbar.handleToggle();
   }
+
   render () {
     let styles={
       root:{
@@ -27,11 +26,9 @@ class Header extends React.Component {
     }
     return(
       <div style={styles.root}>
+        <AppBar  title="Title" onLeftIconButtonTouchTap={this._onLeftIconButtonTouchTap.bind(this)} />
 
-        <IconButton tooltip="menu" style={styles.icon} iconStyle={styles.svg} onClick={this.handelOpen.bind(this)}>
-          <MenuButton  color='#fff' hoverColor='#004D40'/>
-        </IconButton>
-        <Search handelSearch={this.props.change}/>
+    
         <NavBar ref='navbar'/>
 
       </div>

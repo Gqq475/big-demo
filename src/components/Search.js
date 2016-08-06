@@ -3,15 +3,21 @@ import SearchBtn from 'material-ui/svg-icons/action/search';
 import TextField from 'material-ui/TextField';
 
 class Search extends React.Component {
+  handelOpen(){
+    this.refs.navbar.handleToggle();
+  }
+
   handelInput(e){
     let x = e.target.value;
-    this.props.handelSearch(x);
+    this.props.change(x);
+    
   }
   render () {
-    // console.log(this.props.handelSearch);
+
     let styles={
       root:{
-        padding:'50px 10px'
+        padding:'50px 10px',
+        backgroundColor:'#00BCD4'
       },
       title:{
         color:'#fff',

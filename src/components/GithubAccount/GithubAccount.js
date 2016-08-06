@@ -7,6 +7,7 @@ import github from './github';
 import CircularProgress from 'material-ui/CircularProgress';
 
 
+
 class GithubAccount extends Component {
   constructor(props) {
     super(props);
@@ -39,11 +40,12 @@ class GithubAccount extends Component {
     return(
       <div>
         {this.state.wait ? x :
-         <div className='account'>
-           <Card className="content">
-             { GitHubInfo }
-           </Card>
-         </div>
+           <div className='account'>
+             <h1 style={{width:"30%",marginLeft:"40%",marginTop:"40px"}}>MY GITHUB INFO</h1>
+             <Card className="content">
+               { GitHubInfo }
+             </Card>
+           </div>
         }
        </div>
     )

@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react'
 import Drawer from 'material-ui/Drawer';
 import MenuItem from 'material-ui/MenuItem';
+import {Link} from 'react-router';
 
 class NavBar extends React.Component {
   constructor(props) {
@@ -37,9 +38,9 @@ class NavBar extends React.Component {
         >
           <p style={styles.title}>好多视频网</p>
           <div style={styles.menu}>
-            <MenuItem onTouchTap={this.handleClose.bind(this)}>笔记列表</MenuItem>
-            <MenuItem onTouchTap={this.handleClose.bind(this)}>登陆</MenuItem>
-            <MenuItem onTouchTap={this.handleClose.bind(this)}>注册</MenuItem>
+            <MenuItem onTouchTap={this.handleClose.bind(this)}><Link to="/" style={styles.link} activeStyle={{color: 'red'}} onlyActiveOnIndex={true}>首页</Link></MenuItem>
+            <MenuItem onTouchTap={this.handleClose.bind(this)}> <Link to="list" style={styles.link} activeStyle={{color: 'red'}}>笔记列表</Link></MenuItem>
+            <MenuItem onTouchTap={this.handleClose.bind(this)}> <Link to="githubinfo" style={styles.link} activeStyle={{color: 'red'}}>个人信息</Link></MenuItem>
           </div>
         </Drawer>
       </div>
