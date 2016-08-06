@@ -1,52 +1,47 @@
-import React from 'react';
+import React, { Component } from 'react';
 import map from 'lodash/fp/map';
+import axios from 'axios';
+import Search from './Search'
+import Card from './Card.js';
 
-import BlogCard from './Card.js';
-import blogs from '../blogs/blogs.js';
-import GithubAccount from './GithubAccount/GithubAccount';
-import Search from './Search.js';
-class List extends React.Component {
+class Blog extends Component {
   constructor(){
-   super();
-   this.state={
-     text:''
-   }
- }
- cardSearch(x){
+    super();
+    this.state={
+      posts: ''
+    }
+  }
 
-   this.setState({text:x})
- }
-  render () {
+  componentDidMount(){
+    let address = `https://raw.githubusercontent.com/happypeter/big-demo/master/posts/index.json`
+    axios.get(address).then((res) => {
+      console.log(res);
+      this.setState({
+        posts: res.data
+      });
+    });
+  }
 
+  render(){
+    // console.log(Cards.length);
     var blogCards = [];
-    if (this.state.text=='') {
-      map((b) => {blogCards.push(<BlogCard title={b.title} date={b.date} index={b.index} key={Math.random()}/>);},blogs);
-    }else {
-      let query=new RegExp(this.state.text,"i");
-      for (var i = 0; i < blogs.length; i++) {
-        if (query.test(blogs[i].title)) {
-          blogCards.push(<BlogCard title={blogs[i].title} date={blogs[i].date} index={blogs[i].index} key={Math.random()}/>)
-        }
-      }
-    }
-
-    let styles={
-      root:{
-        maxWidth:'100%',
-        padding:'20px 20px',
-        margin:'0 auto',
-      }
-    }
+    map((b) =>  {
+                  blogCards.push(
+                    <Card title={b.title} date={b.created_at } index={b.id} key={Math.random()}/>
+                  );
+                },
+        this.state.posts
+    );
+    // console.log(AllCards);
     return(
-      <div >
-        <Search change={this.cardSearch.bind(this)}/>
-        <div style={styles.root}>
+      <div>
+        <Search />
+        <div style={{marginTop:"30px"}}>
         {blogCards}
-       </div>
-
+      </div>
       </div>
     )
   }
 }
-  // <GithubAccount />
-export default List;
+
+export default Blog;
