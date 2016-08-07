@@ -11,7 +11,7 @@ class Blog extends Component {
     this.state={
       text:'',
       posts: '',
-      name:'',
+    
       wait:true
     }
   }

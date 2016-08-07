@@ -5,7 +5,7 @@ class Post extends React.Component {
   constructor(){
     super();
     this.state={
-      title:'',
+      rawContext:'',
 
     }
   }
@@ -16,14 +16,14 @@ class Post extends React.Component {
     axios.get(address).then((res) => {
 
       this.setState({
-        title: res.data,
+        rawContext: res.data,
 
       });
 
     });
   }
   render () {
-    let content = marked(this.state.title!='' ? this.state.title : '请稍等......' );
+    let content = marked(this.state.rawContext!='' ? this.state.rawContext : '请稍等......' );
     return(
       <div>
 
