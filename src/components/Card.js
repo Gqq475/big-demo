@@ -1,6 +1,9 @@
-import React from 'react'
-
+import React from 'react';
+import {hashHistory} from 'react-router';
 class Card extends React.Component {
+  handleClick(){
+    hashHistory.push('list/sss')
+  }
   render () {
     let styles={
       root:{
@@ -32,7 +35,7 @@ class Card extends React.Component {
       }
     }
     return(
-      <div style={styles.root} className="card">
+      <div style={styles.root} className="card" onClick={this.handleClick.bind(this)}>
         <div style={styles.left}>{this.props.index}</div>
         <div style={styles.right}>
           <h3 style={styles.h3}>{this.props.title}</h3>

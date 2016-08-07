@@ -1,3 +1,3 @@
-#git tips
+# git tips
 
 *hello* everyone

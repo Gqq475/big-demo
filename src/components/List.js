@@ -40,7 +40,6 @@ class Blog extends Component {
                 },
         this.state.posts
     );
-    // console.log(AllCards);
     return(
       <div>
         <Search  change={this.state.cardSearch}/>
