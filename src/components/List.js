@@ -11,6 +11,7 @@ class Blog extends Component {
     this.state={
       text:'',
       posts: '',
+      name:'',
       wait:true
     }
   }
@@ -35,8 +36,8 @@ class Blog extends Component {
     var blogCards = [];
     map((b) =>  {
                   blogCards.push(
-                    <Card title={b.title} date={b.created_at } index={b.id} key={Math.random()}/>
-                  );
+                    <Card title={b.title} date={b.created_at } index={b.id} url={b.name} key={Math.random()}/>
+                  );//用url来控制md的文件名
                 },
         this.state.posts
     );

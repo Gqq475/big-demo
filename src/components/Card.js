@@ -2,7 +2,7 @@ import React from 'react';
 import {hashHistory} from 'react-router';
 class Card extends React.Component {
   handleClick(){
-    hashHistory.push('list/sss')
+    hashHistory.push(`list/${this.props.url}`)
   }
   render () {
     let styles={
