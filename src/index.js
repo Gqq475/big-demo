@@ -2,6 +2,7 @@ import React from 'react';
 import {render} from 'react-dom';
 
 import './style/common.css';
+import './style/hljs.css';
 import {Router,hashHistory} from 'react-router';
 import routes from './routes.js';
 import injectTapEventPlugin from 'react-tap-event-plugin';

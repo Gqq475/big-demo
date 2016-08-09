@@ -45,6 +45,8 @@
     "eventsource-polyfill": "^0.9.6",
     "express": "^4.13.3",
     "file-loader": "^0.9.0",
+    "highlight": "^0.2.4",
+    "highlight.js": "^9.5.0",
     "rimraf": "^2.4.3",
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",

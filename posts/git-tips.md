@@ -1,9 +1,10 @@
 # git tips
 
-*hello* everyone
+## marked
 
-```js
-git init
-git add -A
-console.log(aaa)
-```
+- category
+- haha
+- women
+- love
+
+*hello* everyone
