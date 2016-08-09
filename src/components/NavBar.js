@@ -6,7 +6,23 @@ import {Link} from 'react-router';
 class NavBar extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {open: false};
+    this.state = {
+      open: false,
+      title:''
+    };
+  }
+  componentWillReceiveProps() {
+    this.setNavState();
+  }
+  componentDidMount(){
+    this.setNavState();
+  }
+  setNavState(){
+    this.setState({
+      title:this.context.router.isActive('/', true) ? 'HOME' :
+        this.context.router.isActive('/list')? 'List' :
+        this.context.router.isActive('/githubinfo')? 'GithubAccount' : 'HOME'
+    });
   }
   handleToggle(){
     this.setState({open: !this.state.open});
@@ -36,7 +52,7 @@ class NavBar extends React.Component {
           open={this.state.open}
           onRequestChange={(open) => this.setState({open})}
         >
-          <p style={styles.title}>好多视频网</p>
+          <p style={styles.title}>{this.state.title}</p>
           <div style={styles.menu}>
             <MenuItem onTouchTap={this.handleClose.bind(this)}><Link to="/" style={styles.link} activeStyle={{color: 'red'}} onlyActiveOnIndex={true}>首页</Link></MenuItem>
             <MenuItem onTouchTap={this.handleClose.bind(this)}> <Link to="list" style={styles.link} activeStyle={{color: 'red'}}>笔记列表</Link></MenuItem>
@@ -47,5 +63,7 @@ class NavBar extends React.Component {
     )
   }
 }
-
+NavBar.contextTypes = {
+ router: React.PropTypes.object.isRequired
+}
 export default NavBar;

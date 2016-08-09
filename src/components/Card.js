@@ -1,8 +1,7 @@
 import React from 'react';
-import {hashHistory} from 'react-router';
 class Card extends React.Component {
   handleClick(){
-    hashHistory.push(`list/${this.props.url}`)
+    this.context.router.push(`list/${this.props.url}`)
   }
   render () {
     let styles={
@@ -11,6 +10,7 @@ class Card extends React.Component {
         height:'90px',
         margin:'0 auto',
         marginBottom:'15px',
+        cursor:'pointer'
       },
       left:{
         float:'left',
@@ -57,4 +57,7 @@ Card.propTypes = {
   title: React.PropTypes.string.isRequired,
   date: React.PropTypes.string.isRequired,
 };
+Card.contextTypes={
+  router:React.PropTypes.object.isRequired
+}
 export default Card;
