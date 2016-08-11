@@ -1,6 +1,6 @@
 import React from 'react';
 import {render} from 'react-dom';
-
+import './style/mk.css';
 import './style/common.css';
 import './style/hljs.css';
 import {Router,hashHistory} from 'react-router';

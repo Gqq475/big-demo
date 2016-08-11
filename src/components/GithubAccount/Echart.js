@@ -4,6 +4,10 @@ class Echart extends React.Component {
   componentDidMount(){
     let myChart = echarts.init(document.getElementById('main'));
     myChart.setOption({
+      title:{
+        text:'我的各项技能展示',
+        left:'center'
+      },
        color: ['#3398DB'],
        tooltip : {
            trigger: 'axis',
@@ -49,13 +53,8 @@ class Echart extends React.Component {
       height:'400px',
       margin:'0 auto'
     }
-    let h2s={
-      width:'200px',
-      margin:'0 auto'
-    }
     return(
       <div>
-       <h2 style={h2s}>各项技能展示</h2>
        <div id="main" style={styles}></div>
       </div>
     )
