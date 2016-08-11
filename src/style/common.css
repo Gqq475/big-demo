@@ -94,3 +94,28 @@ ul {
 .account .user-repos li  .lang {
   font-size: 14px;
 }
+.work-wrap{
+  display:flex;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 960px;
+  margin:0 auto;
+  padding:10px;
+  justify-content: space-between;
+}
+.work-card{
+  width: 100%;
+  margin-bottom: 10px
+}
+@media(min-width:500px){
+  .work-card{
+    width: 49%;
+    margin-bottom: 10px
+  }
+}
+@media(min-width:760px){
+  .work-card{
+    width: 32%;
+    margin-bottom: 10px
+  }
+}
